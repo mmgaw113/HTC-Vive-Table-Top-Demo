@@ -228,6 +228,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7286827319778060500, guid: 40fd44c3349d3d2498d731ce3339d522,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286827319778060500, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
       propertyPath: m_LocalScale.y
       value: 0.9999999
       objectReference: {fileID: 0}
@@ -260,6 +265,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.70710677
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286827319778060500, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286827319778060500, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286827320842580378, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
+      propertyPath: m_LocalRotation.value.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286827320842580378, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
+      propertyPath: m_LocalRotation.value.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7286827320842580383, guid: 40fd44c3349d3d2498d731ce3339d522,
         type: 3}
@@ -315,7 +340,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28521856}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ff5ace57892f32046910a1f1724ce67e, type: 3}
   m_Name: 
@@ -344,6 +369,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c703502c1493f5b4eb3e95b2efe0271e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &28521865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7286827320842580378, guid: 40fd44c3349d3d2498d731ce3339d522,
+    type: 3}
+  m_PrefabInstance: {fileID: 28521855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28521858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 265b6a392115d8a4aa7154d8c9356e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &92665705
@@ -529,12 +566,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d573d5a07586d243aeec97b1a2956f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arcGISMapComponent: {fileID: 28521863}
+  hpRoot: {fileID: 28521865}
+  tableTop: {fileID: 28521857}
+  radiusScalar: 25
+  leftInputSource: 4
+  rightInputSource: 5
   leftInteractor: {fileID: 759506539}
   rightInteractor: {fileID: 1242479816}
-  tableTop: {fileID: 28521857}
-  arcGISMapComponent: {fileID: 28521863}
-  radiusScalar: 1
-  rightInputSource: 5
+  tableTopGO: {fileID: 28521856}
+  leftCube: {fileID: 92665705}
+  rightCube: {fileID: 492497282}
 --- !u!1 &366573970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,7 +1676,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952669792}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fcccbd1654f436a49b8db1001964c2e4, type: 3}
   m_Name: 

@@ -9,6 +9,17 @@
         "com.unity.mathematics": "1.2.6"
       }
     },
+    "com.htc.upm.vive.openxr": {
+      "version": "https://github.com/ViveSoftware/VIVE-OpenXR.git?path=com.htc.upm.vive.openxr",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.inputsystem": "1.4.3",
+        "com.unity.xr.management": "4.2.1",
+        "com.unity.xr.openxr": "1.3.1"
+      },
+      "hash": "11b730e79bd168bb6b394e8aa3f86ee6d21776d6"
+    },
     "com.htc.upm.wave.openxr": {
       "version": "https://github.com/ViveSoftware/VIVE-OpenXR-AIO.git?path=com.htc.upm.wave.openxr",
       "depth": 0,
