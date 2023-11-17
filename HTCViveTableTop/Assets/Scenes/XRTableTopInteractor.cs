@@ -1,6 +1,10 @@
 using Esri.ArcGISMapsSDK.Components;
+using Esri.GameEngine.Layers;
+using Esri.GameEngine.Map;
 using Esri.HPFramework;
+using Esri.Unity;
 using Unity.Mathematics;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -26,29 +30,34 @@ namespace Esri.ArcGISMapsSDK.Samples.Components
         private float leftGripAxis;
         private bool leftPrimaryButton;
         private bool leftSecondaryButton;
+        private float leftTriggerAxis;
 
         [SerializeField] private GameObject tableTopGO;
+        [SerializeField] private GameObject tableTopWrapper;
         private bool triggerPressed;
 
-        public GameObject leftCube;
-        public GameObject rightCube;
+        public GameObject cube;
 
         // Start is called before the first frame update
-        void Start()
+        void Awake()
         {
-
+/*            var buildingLayer = new Esri.GameEngine.Layers.ArcGISIntegratedMeshLayer(
+                Application.persistentDataPath + "/Test_Boston_Subset.slpk",
+                "Building Layer", 1.0f, true, "");
+            arcGISMapComponent.View.Map.Layers.Add(buildingLayer);*/
         }
 
         // Update is called once per frame
         void Update()
         {
-            tableTop.Radius = Mathf.Clamp((float)tableTop.Radius, 10000.0f, 4500000.0f);
+            tableTop.Radius = Mathf.Clamp((float)tableTop.Radius, 5000.0f, 4500000.0f);
             UnityEngine.XR.InputDevice rightDevice = InputDevices.GetDeviceAtXRNode(rightInputSource);
             UnityEngine.XR.InputDevice leftDevice = InputDevices.GetDeviceAtXRNode(leftInputSource);
             leftDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxis, out leftInputAxis);
             leftDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primaryButton, out leftPrimaryButton);
             leftDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.secondaryButton, out leftSecondaryButton);
             leftDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.grip, out leftGripAxis);
+            leftDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.trigger, out leftTriggerAxis);
 
             rightDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.primary2DAxis, out rightInputAxis);
             rightDevice.TryGetFeatureValue(UnityEngine.XR.CommonUsages.triggerButton, out triggerPressed);
@@ -77,7 +86,11 @@ namespace Esri.ArcGISMapsSDK.Samples.Components
             //rotate
             if (leftGripAxis != 0)
             {
-                tableTopGO.transform.Rotate(Vector3.up * Time.deltaTime * 45, Space.Self);
+                tableTopWrapper.transform.Rotate(Vector3.up * Time.deltaTime * 45, Space.Self);
+            }
+            else if (leftTriggerAxis != 0)
+            {
+                tableTopWrapper.transform.Rotate(Vector3.up * Time.deltaTime * -45, Space.Self);
             }
 
             if (leftSecondaryButton)
@@ -93,6 +106,7 @@ namespace Esri.ArcGISMapsSDK.Samples.Components
 
             if (rightHit.collider)
             {
+                cube.SetActive(false);
                 if (rightInputAxis.y != 0.0f)
                 {
                     var zoom = Mathf.Sign(rightInputAxis.y);
@@ -112,30 +126,22 @@ namespace Esri.ArcGISMapsSDK.Samples.Components
                     EndPointDrag();
                 }
             }
+            else
+            {
+                cube.SetActive(true);
+            }
         }
 
         public void StartPointDrag()
         {
             Vector3 dragCurrentPoint;
             var dragStartRay = new Ray(rightInteractor.rayOriginTransform.position, rightInteractor.rayEndPoint - rightInteractor.rayOriginTransform.position);
-
             tableTop.Raycast(dragStartRay, out dragCurrentPoint);
             isDragging = true;
             dragStartPoint = dragCurrentPoint;
             // Save the matrix to go from Local space to Universe space
             // As the origin location will be changing during drag, we keep the transform we had when the action started
             dragStartWorldMatrix = math.mul(math.inverse(hpRoot.WorldMatrix), tableTop.transform.localToWorldMatrix.ToDouble4x4());
-
-/*            if (tableTop.Raycast(dragStartRay, out dragCurrentPoint))
-            {
-                leftCube.SetActive(false);
-                rightCube.SetActive(true);
-            }
-            else
-            {
-                leftCube.SetActive(true);
-                rightCube.SetActive(false);
-            }*/
         }
 
         public void UpdatePointDrag()
@@ -174,18 +180,18 @@ namespace Esri.ArcGISMapsSDK.Samples.Components
 
         private bool OnMapHit()
         {
-/*            if (leftInteractor != null)
-            {
-                leftInteractor.TryGetCurrent3DRaycastHit(out RaycastHit leftHit);
+            /*            if (leftInteractor != null)
+                        {
+                            leftInteractor.TryGetCurrent3DRaycastHit(out RaycastHit leftHit);
 
-                if (leftHit.collider)
-                {
-                    if (leftHit.collider.name.ToLower().Contains("arcgis"))
-                    {
-                        return true;
-                    }
-                }
-            }*/
+                            if (leftHit.collider)
+                            {
+                                if (leftHit.collider.name.ToLower().Contains("arcgis"))
+                                {
+                                    return true;
+                                }
+                            }
+                        }*/
 
             if (rightInteractor != null)
             {

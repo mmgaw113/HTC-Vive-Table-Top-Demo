@@ -488,6 +488,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92665705}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &282573807 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4308162827886782201, guid: 40fd44c3349d3d2498d731ce3339d522,
+    type: 3}
+  m_PrefabInstance: {fileID: 28521855}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &292749284
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,8 +581,8 @@ MonoBehaviour:
   leftInteractor: {fileID: 759506539}
   rightInteractor: {fileID: 1242479816}
   tableTopGO: {fileID: 28521856}
-  leftCube: {fileID: 92665705}
-  rightCube: {fileID: 492497282}
+  tableTopWrapper: {fileID: 282573807}
+  cube: {fileID: 492497282}
 --- !u!1 &366573970
 GameObject:
   m_ObjectHideFlags: 0
