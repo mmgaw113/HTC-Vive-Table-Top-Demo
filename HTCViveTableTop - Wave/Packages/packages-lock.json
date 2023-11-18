@@ -9,17 +9,6 @@
         "com.unity.mathematics": "1.2.6"
       }
     },
-    "com.htc.upm.vive.openxr": {
-      "version": "https://github.com/ViveSoftware/VIVE-OpenXR.git?path=com.htc.upm.vive.openxr",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.inputsystem": "1.4.3",
-        "com.unity.xr.management": "4.2.1",
-        "com.unity.xr.openxr": "1.3.1"
-      },
-      "hash": "11b730e79bd168bb6b394e8aa3f86ee6d21776d6"
-    },
     "com.htc.upm.wave.essence": {
       "version": "https://github.com/ViveSoftware/VIVE-Wave.git?path=com.htc.upm.wave.essence",
       "depth": 0,
@@ -38,35 +27,6 @@
         "com.htc.upm.wave.xrsdk": "5.4.0-r.8"
       },
       "hash": "9c043820327fe72609b8714cec3fbe1bf569cbb3"
-    },
-    "com.htc.upm.wave.openxr": {
-      "version": "https://github.com/ViveSoftware/VIVE-OpenXR-AIO.git?path=com.htc.upm.wave.openxr",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.unity.inputsystem": "1.3.0",
-        "com.unity.xr.management": "4.2.1",
-        "com.unity.xr.openxr": "1.3.1"
-      },
-      "hash": "2e4ecb200da4a4dfc9785040dfb9eaa372b8fa07"
-    },
-    "com.htc.upm.wave.openxr.toolkit": {
-      "version": "https://github.com/ViveSoftware/VIVE-OpenXR-AIO.git?path=com.htc.upm.wave.openxr.toolkit",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.htc.upm.wave.openxr": "1.0.5"
-      },
-      "hash": "2e4ecb200da4a4dfc9785040dfb9eaa372b8fa07"
-    },
-    "com.htc.upm.wave.openxr.toolkit.samples": {
-      "version": "https://github.com/ViveSoftware/VIVE-OpenXR-AIO.git?path=com.htc.upm.wave.openxr.toolkit.samples",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {
-        "com.htc.upm.wave.openxr.toolkit": "1.0.5"
-      },
-      "hash": "2e4ecb200da4a4dfc9785040dfb9eaa372b8fa07"
     },
     "com.htc.upm.wave.xrsdk": {
       "version": "https://github.com/ViveSoftware/VIVE-Wave.git?path=com.htc.upm.wave.xrsdk",

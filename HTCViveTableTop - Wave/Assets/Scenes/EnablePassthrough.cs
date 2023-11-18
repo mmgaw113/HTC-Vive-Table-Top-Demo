@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Wave.Native;
-using Wave.OpenXR.CompositionLayer;
-using Wave.OpenXR.Toolkit.CompositionLayer.Passthrough;
+/*using Wave.OpenXR.CompositionLayer;
+using Wave.OpenXR.Toolkit.CompositionLayer.Passthrough;*/
 //using Wave.OpenXR.Toolkit.Samples;
 
 namespace Wave.OpenXR.Toolkit.CompositionLayer.Samples.Passthrough
 {
     public class EnablePassthrough : MonoBehaviour
     {
-        private int activePassthroughID = 0;
-        private LayerType currentActiveLayerType = LayerType.Underlay;
+/*        private int activePassthroughID = 0;
+        private LayerType currentActiveLayerType = LayerType.Underlay;*/
 
 
         private void Start()
@@ -31,7 +31,7 @@ namespace Wave.OpenXR.Toolkit.CompositionLayer.Samples.Passthrough
 
         }
 
-        public void SetPassthroughToUnderlay()
+/*        public void SetPassthroughToUnderlay()
         {
             if (activePassthroughID != 0)
             {
@@ -49,6 +49,6 @@ namespace Wave.OpenXR.Toolkit.CompositionLayer.Samples.Passthrough
         {
             CompositionLayerPassthroughAPI.DestroyPassthrough(passthroughID);
             activePassthroughID = 0;
-        }
+        }*/
     }
 }

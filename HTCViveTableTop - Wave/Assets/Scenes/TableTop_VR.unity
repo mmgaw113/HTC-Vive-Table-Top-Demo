@@ -131,6 +131,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3598914963938122860, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
+      propertyPath: center.x
+      value: -8238310.235646995
+      objectReference: {fileID: 0}
+    - target: {fileID: 3598914963938122860, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
+      propertyPath: center.y
+      value: 4970071.5791424215
+      objectReference: {fileID: 0}
     - target: {fileID: 7286827319692709446, guid: 40fd44c3349d3d2498d731ce3339d522,
         type: 3}
       propertyPath: m_RootOrder
@@ -278,6 +288,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7286827320842580378, guid: 40fd44c3349d3d2498d731ce3339d522,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -13045208.513858994
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286827320842580378, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4036807.4794068094
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286827320842580378, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
       propertyPath: m_LocalRotation.value.w
       value: 1
       objectReference: {fileID: 0}
@@ -293,21 +313,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7286827320842580383, guid: 40fd44c3349d3d2498d731ce3339d522,
         type: 3}
+      propertyPath: originPosition.x
+      value: -8238310.235646995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286827320842580383, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
+      propertyPath: originPosition.y
+      value: 4970071.5791424215
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286827320842580383, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
       propertyPath: meshCollidersEnabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286827320842580383, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
+      propertyPath: extent.GeographicCenter.x
+      value: -8238310.235646995
+      objectReference: {fileID: 0}
+    - target: {fileID: 7286827320842580383, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
+      propertyPath: extent.GeographicCenter.y
+      value: 4970071.5791424215
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7286827319692709447, guid: 40fd44c3349d3d2498d731ce3339d522,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 28521859}
     - targetCorrespondingSourceObject: {fileID: 7286827320842580380, guid: 40fd44c3349d3d2498d731ce3339d522,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 28521860}
+    - targetCorrespondingSourceObject: {fileID: 7286827320842580380, guid: 40fd44c3349d3d2498d731ce3339d522,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 28521867}
   m_SourcePrefab: {fileID: 100100000, guid: 40fd44c3349d3d2498d731ce3339d522, type: 3}
 --- !u!1 &28521856 stripped
 GameObject:
@@ -333,19 +373,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 28521855}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &28521859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28521856}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5ace57892f32046910a1f1724ce67e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tabletopControllerComponent: {fileID: 28521857}
 --- !u!114 &28521860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +410,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 265b6a392115d8a4aa7154d8c9356e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &28521867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28521858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb44fd2b872003c4aa0626463bea8207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arcGISMapComponent: {fileID: 0}
 --- !u!1 &92665705
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,13 +616,12 @@ MonoBehaviour:
   hpRoot: {fileID: 28521865}
   tableTop: {fileID: 28521857}
   radiusScalar: 25
+  tableTopGO: {fileID: 28521856}
+  tableTopWrapper: {fileID: 182829966}
   leftInputSource: 4
   rightInputSource: 5
   leftInteractor: {fileID: 759506539}
   rightInteractor: {fileID: 1242479816}
-  tableTopGO: {fileID: 28521856}
-  tableTopWrapper: {fileID: 182829966}
-  cube: {fileID: 492497282}
 --- !u!1 &366573970
 GameObject:
   m_ObjectHideFlags: 0
