@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class LoadData : MonoBehaviour
 {
-    [SerializeField] private ArcGISMapComponent arcGISMapComponent;
-    string apikey;
+    private ArcGISMapComponent arcGISMapComponent;
 
     private void Awake()
     {
@@ -23,7 +22,14 @@ public class LoadData : MonoBehaviour
             "https://tiles.arcgis.com/tiles/P3ePLMYs2RVChkJx/arcgis/rest/services/Buildings_NewYork_17/SceneServer",
             "Building Layer", 1.0f, true, "");
 
-        arcGISMapComponent.View.Map.Layers.Add(buildingLayer);
-        arcGISMapComponent.View.Map.Layers.Add(newYorkBuildings);
+        if(buildingLayer != null)
+        {
+            arcGISMapComponent.View.Map.Layers.Add(buildingLayer);
+        }
+
+        if(newYorkBuildings != null)
+        {
+            arcGISMapComponent.View.Map.Layers.Add(newYorkBuildings);
+        }
     }
 }
