@@ -12,8 +12,6 @@ public class OnButtonDown : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     {
         ZoomIn,
         ZoomOut,
-        RotateLeft,
-        RotateRight
     }
 
     [SerializeField] private Sprite originalImage;
@@ -60,24 +58,7 @@ public class OnButtonDown : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
                 {
                     tableTopInteractor.ZoomOutMap();
                 }
-                else if (Type == type.RotateLeft)
-                {
-                    tableTopInteractor.RotateMapLeft();
-                }
-                else if (Type == type.RotateRight)
-                {
-                    tableTopInteractor.RotateMapRight();
-                }
             }
-        }
-
-        if (entered)
-        {
-            GetComponent<Image>().sprite = newImage;
-        }
-        else
-        {
-            GetComponent<Image>().sprite = originalImage;
         }
     }
 }
